@@ -15,6 +15,7 @@ Please vocalise your thoughts and ask questions if needed.
 - Display **ClkSelectList** with all its options
 - Display **ClkInputSelector** next to it
 - If the content of **ClkInputSelector** matches one of the available options in **ClkSelectList**,   select that value, if not, don't do anything
-- **BONUS**: provide a way for adding new elements to the **ClkSelectList** at runtime while preserving the functionality you have built so far, again, you have complete freedom over the approach
+- 💥 **BONUS**: provide a way for adding new elements to the **ClkSelectList** at runtime while preserving the functionality you have built so far, again, you have complete freedom over the approach
 
 ------------------
+Based on the Create React App Sample - By Alessandro De Blasis for Clarksons Platou

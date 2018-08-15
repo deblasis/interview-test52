@@ -18,7 +18,7 @@ class App extends Component {
           Please vocalise your thoughts and ask questions if needed.
         </p>
         <p className="App-intro">
-          <h1>Task:</h1>
+          <h1><span role="img" aria-label="Tasks">✅</span>&nbsp;Tasks:</h1>
           <ul>
             <li>Please create a component called "<strong>ClkContainer</strong>"</li>
             <li>Please create a new component called "<strong>ClkSelectList</strong>"<br />
@@ -30,12 +30,12 @@ class App extends Component {
           Its purpose is to wrap the &lt;input&gt; HTML element and to add some logic to it.</li>
           </ul>
        
-          The final goal is:
+          <span role="img" aria-label="Goal">🏁</span>&nbsp;The final goal is:
           <ul>
           <li>Display <strong>ClkSelectList</strong> with all its options</li>
           <li>Display <strong>ClkInputSelector</strong> next to it</li>
           <li>If the content of <strong>ClkInputSelector</strong> matches one of the available options in <strong>ClkSelectList</strong>, select that value, if not, don't do anything </li>
-          <li>BONUS: provide a way for adding new elements to the <strong>ClkSelectList</strong> at runtime at runtime while preserving the functionality you have built so far, again, you have complete freedom over the approach</li>
+          <li><span role="img" aria-label="Boom">💥</span> BONUS: provide a way for adding new elements to the <strong>ClkSelectList</strong> at runtime at runtime while preserving the functionality you have built so far, again, you have complete freedom over the approach</li>
           </ul>
         </p>
       </div>
