@@ -20,6 +20,7 @@ class App extends Component {
         <p className="App-intro">
           <h1><span role="img" aria-label="Tasks">✅</span>&nbsp;Tasks:</h1>
           <ul>
+            <li>First of all, please create a branch with your name locally</li>
             <li>Please create a component called "<strong>ClkContainer</strong>"</li>
             <li>Please create a new component called "<strong>ClkSelectList</strong>"<br />
           Its purpose is to wrap the &lt;select&gt; HTML element and to bind it to a model. <br />

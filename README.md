@@ -5,6 +5,7 @@ Feel free to install any package you believe is necessary to achieve the final g
 Please vocalise your thoughts and ask questions if needed.
 
 # ✅ Tasks:
+- First of all, please create a branch with your name locally
 - Please create a component called "**ClkContainer**"
 - Please create a new component called "**ClkSelectList**"
   Its purpose is to wrap the `<select>` HTML element and to bind it to a model. 

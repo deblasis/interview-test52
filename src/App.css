@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -21,6 +21,5 @@
 .App-intro {
   font-size: large;
   text-align: left;
-
 }
 
