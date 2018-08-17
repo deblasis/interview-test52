@@ -3,42 +3,90 @@ import logo from './logo.png';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    
+    this.state = {elements: [{
+      name: "a",
+    },{
+      name: "b",
+    },{
+      name: "c",
+    }]};
+
+    this.addElement = this.addElement.bind(this);
+    this.deleteSecond = this.deleteSecond.bind(this);
+    this.shuffle = this.shuffle.bind(this);
+  }
+
+  addElement() {
+
+    let array = this.state.elements;
+    array.push({name: "NEW!"});
+
+    this.setState(({
+      elements: array
+    }));
+  }
+
+
+
+  deleteSecond() {
+    this.setState(prevState => ({
+      elements: prevState.elements.filter((_, i) => i !== 1)
+    }));
+  }
+
+
+  
+  shuffle() {
+
+    let array = this.state.elements;
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    this.setState(({
+      elements: array
+    }));
+  }
+
   render() {
+    const content = this.state.elements.map((e, index) =>
+      <div key={index}>
+        <p>{e.name}</p>
+      </div>
+    );
+
+  
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">React Code Challenge</h1>
         </header>
-        <p className="App-intro">
-
-          You can implement this in your favourite way, we are interested in the approach more than anything else.<br />
-          Feel free to install any package you believe is necessary to achieve the final goal if necessary.<br />
-
-          Please vocalise your thoughts and ask questions if needed.
-        </p>
-        <p className="App-intro">
-          <h1><span role="img" aria-label="Tasks">✅</span>&nbsp;Tasks:</h1>
-          <ul>
-            <li>First of all, please create a branch with your name locally</li>
-            <li>Please create a component called "<strong>ClkContainer</strong>"</li>
-            <li>Please create a new component called "<strong>ClkSelectList</strong>"<br />
-          Its purpose is to wrap the &lt;select&gt; HTML element and to bind it to a model. <br />
-          The available options are ["white", "red", "green", "yellow", "blue"]
-          </li>
-
-          <li>Please create a component called "<strong>ClkInputSelector</strong>"
-          Its purpose is to wrap the &lt;input&gt; HTML element and to add some logic to it.</li>
-          </ul>
        
-          <span role="img" aria-label="Goal">🏁</span>&nbsp;The final goal is:
-          <ul>
-          <li>Display <strong>ClkSelectList</strong> with all its options</li>
-          <li>Display <strong>ClkInputSelector</strong> next to it</li>
-          <li>If the content of <strong>ClkInputSelector</strong> matches one of the available options in <strong>ClkSelectList</strong>, select that value, if not, don't do anything </li>
-          <li><span role="img" aria-label="Boom">💥</span> BONUS: provide a way for adding new elements to the <strong>ClkSelectList</strong> at runtime at runtime while preserving the functionality you have built so far, again, you have complete freedom over the approach</li>
-          </ul>
-        </p>
+        <button onClick={this.addElement}>Add element</button>
+        <button onClick={this.deleteSecond}>Delete second element</button>
+        <button onClick={this.shuffle}>SHUFFLE!!</button>
+
+
+        {content}
+
+        <pre>
+          {JSON.stringify(this.state.elements)}
+        </pre>
+
       </div>
     );
   }
